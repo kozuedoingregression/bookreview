@@ -1,0 +1,14 @@
+<h1 class="book-title"><%= @book.title %> by <%= @book.author %></h1>
+<p><%= @book.descriptihow this bookon %></p>
+
+<h2>Reviews:</h2>
+<% @book.reviews.each do |review| %>
+  <p><strong><%= review.user.email %>:</strong> <%= review.content %> (⭐️ <%= review.rating %>)</p>
+<% end %>
+
+<h3>Leave a Review:</h3>
+<%= form_with(model: [@book, @book.reviews.build]) do |f| %>
+  <%= f.text_area :content %><br>
+  <%= f.number_field :rating, in: 1..5 %><br>
+  <%= f.submit "Post Review" %>
+<% end %>

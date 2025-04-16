@@ -1,0 +1,33 @@
+<div id="<%= dom_id book %>">
+  <p>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= book.author %>
+  </p>
+
+  <p>
+    <strong>Genre:</strong>
+    <%= book.genre %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= book.description %>
+  </p>
+
+  <p>
+  <strong>Cover image:</strong>
+  <%= image_tag book.cover_image, alt: "Cover image of #{book.title}", width: "200", height: "300" %>
+  </p>
+
+
+  <p>
+    <strong>User:</strong>
+    <%= book.user_id %>
+  </p>
+
+</div>
